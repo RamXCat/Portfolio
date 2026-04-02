@@ -19,17 +19,45 @@
 html {
   scroll-behavior: smooth;
 }
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-primary);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Scroll Progress Bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: var(--accent-primary);
+  z-index: 1000;
+  transition: width 0.1s ease-out;
+}
 
 /* Scroll Animations */
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
+.animate-on-scroll.animate-left { transform: translate(-50px, 0); }
+.animate-on-scroll.animate-right { transform: translate(50px, 0); }
 .animate-on-scroll.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate(0, 0);
 }
 
 body {
@@ -96,6 +124,29 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-2px);
 }
 
+.download-btn {
+  background: var(--accent-primary);
+  color: var(--bg-color);
+  font-weight: 600;
+  border-color: var(--accent-primary);
+}
+
+.download-btn:hover {
+  background: var(--text-primary);
+  color: var(--bg-color);
+  border-color: var(--text-primary);
+}
+
+.download-icon {
+  display: inline-block;
+  margin-left: 0.5rem;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.download-btn:hover .download-icon {
+  transform: translateY(3px);
+}
+
 /* Navigation */
 .navbar {
   display: flex;
@@ -109,6 +160,17 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  cursor: pointer;
+}
+.profile-logo {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.logo:hover .profile-logo, .footer-logo:hover .profile-logo {
+  transform: rotate(360deg) scale(1.15);
 }
 .navbar .nav-links {
   list-style: none;
@@ -170,6 +232,16 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 1;
 }
 /* Universal Ornaments */
+@keyframes show-ltr {
+  0% { transform: translateX(-100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+.animate-show-ltr {
+  animation: show-ltr 0.9s ease-in-out forwards;
+}
+.animate-intro-float {
+  animation: show-ltr 0.9s ease-in-out forwards, float 5s ease-in-out 0.9s infinite;
+}
 @keyframes float {
   0%, 100% { transform: translateY(0) rotate(0deg); }
   50% { transform: translateY(-15px) rotate(2deg); }
@@ -334,6 +406,46 @@ h1, h2, h3, h4, h5, h6 {
 .card-actions {
   display: flex;
   gap: 1rem;
+}
+
+.coming-soon {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  border: 1px dashed var(--accent-primary);
+  background: rgba(199, 120, 221, 0.05);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  min-height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.coming-soon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(199, 120, 221, 0.1) 0%, transparent 70%);
+  z-index: -1;
+}
+
+.coming-soon h3 {
+  font-size: 2.5rem;
+  color: var(--accent-primary);
+  margin-bottom: 1rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+
+.coming-soon p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
 }
 
 /* Skills Section */
