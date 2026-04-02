@@ -56,6 +56,10 @@ To run this project locally, ensure you have **Java 21** and **Maven** installed
 - `src/main/resources/static/`: All frontend assets (HTML, CSS, JS, Images).
 - `pom.xml`: Maven dependency and build configuration.
 
+## 🎨 Credits & Acknowledgments
+
+- **Original Figma Design**: [Portfolio (Community)](https://www.figma.com/design/wvrVcxIr10axq0gPLqVpwi/Portfolio--Community-) by **Elias Dev**. This portfolio's clean, terminal-inspired aesthetic is based on his wonderful design system.
+
 ## 📬 Contact
 
 - **LinkedIn**: [RamXCat](https://www.linkedin.com/in/ramxcat)
