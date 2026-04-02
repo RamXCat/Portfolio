@@ -644,22 +644,21 @@ footer {
   .desktop-only { display: none; }
   .mobile-only { display: block; }
   
-  /* Global Scale Reduction (~30%) */
+  /* Global Scale Reduction */
   html { font-size: 14px; } 
+  .container { padding: 0 1rem; width: 100%; box-sizing: border-box; overflow-x: hidden; }
 
   /* Hamburger Menu Styles */
   .hamburger {
     display: flex !important;
     flex-direction: column;
     justify-content: space-between;
-    width: 25px; /* Scaled down */
+    width: 25px;
     height: 16px;
     cursor: pointer;
     z-index: 1000;
   }
-  .hamburger span {
-    height: 2px;
-  }
+  .hamburger span { height: 2px; }
 
   /* Mobile Nav Overlay */
   .navbar .nav-links {
@@ -669,13 +668,13 @@ footer {
     right: -100%;
     width: 100%;
     height: 100vh;
-    background: rgba(40, 44, 51, 0.95);
+    background: rgba(40, 44, 51, 0.98);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2rem; /* Scaled down */
+    gap: 2rem;
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 999;
     transform: translateX(100%);
@@ -683,70 +682,108 @@ footer {
   .navbar .nav-links.active {
     transform: translateX(-100%);
   }
-  .navbar .nav-links li {
-    font-size: 1.5rem; /* Scaled down */
-  }
 
-  /* Hero Refinement - Scaled Down */
+  /* Hero Section Restoration */
   .hero {
     flex-direction: column !important;
     text-align: center;
     gap: 1.5rem;
-    padding-top: 1.5rem;
+    padding-top: 2rem;
+    width: 100%;
   }
   .hero-content {
-    margin-bottom: 1.5rem;
+    width: 100%;
+    margin-bottom: 2rem;
+    align-items: center;
   }
   .hero-content h1 {
-    font-size: 1.6rem !important; /* Scaled down */
-    margin-bottom: 1rem;
-  }
-  .hero-content p {
-    font-size: 0.85rem;
+    font-size: 1.8rem !important;
+    margin-bottom: 1.2rem;
   }
   .hero-visual {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
   }
   .hero-image {
-    max-width: 80%; /* Scaled down */
+    max-width: 85%;
+    height: auto;
+    z-index: 1;
   }
   .hero-status {
-    margin: -15px auto 2rem !important;
-    font-size: 0.75rem; /* Scaled down */
-    padding: 6px 12px !important;
+    width: fit-content !important;
+    max-width: 90% !important;
+    margin: -15px auto 3rem !important;
+    position: relative !important;
+    z-index: 5;
+    background: rgba(40, 44, 51, 0.9);
   }
 
-  /* Restore Mobile Ornaments - Scaled Down */
-  .hero-visual .ornament {
-    opacity: 0.25;
-  }
-  .hero-visual .ornament:nth-child(1) {
-    right: 10% !important;
-    top: 5% !important;
-    width: 35% !important;
-  }
-  .hero-visual .ornament:nth-child(2) {
-    left: -5% !important;
-    top: 25% !important;
-    width: 25% !important;
-  }
-  .hero-visual .ornament-dots {
-    width: 45px !important;
-    height: 45px !important;
-  }
-
-  /* Grid Stacking & Spacing */
+  /* Vertical Stacking for All Contents */
   .skills-content, .about-content, .contact-content, .footer-content {
-    gap: 2rem;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 2.5rem !important;
+    width: 100%;
   }
+
+  /* Skills Specific Fix */
+  .skills-visual {
+    display: none !important; /* Hide confusing mobile decorations */
+  }
+  .skills-grid {
+    width: 100% !important;
+    flex-direction: column !important; /* Force true single column */
+    align-items: center !important;
+    gap: 1rem !important;
+  }
+  .skills-col {
+    width: 100% !important;
+    min-width: unset !important;
+  }
+
+  /* Projects & Title Cleaning */
   .section-title {
-    font-size: 1.5rem !important;
+    font-size: 1.6rem !important;
+    text-align: left;
+    width: 100%;
   }
   .section-title::after {
-    width: 30% !important;
+    width: 50% !important;
   }
-  .card {
-    padding: 1rem !important;
+  .projects-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  /* About Me Polish */
+  .about-text {
+    width: 100% !important;
+    text-align: left;
+  }
+  .about-visual {
+    width: 100% !important;
+  }
+
+  /* Footer Recovery */
+  .footer-left, .footer-right {
+    text-align: center !important;
+    width: 100%;
+    align-items: center !important;
+  }
+  .footer-logo {
+    justify-content: center;
+  }
+  .footer-icons {
+    justify-content: center;
+  }
+
+  /* Ornament Safety - Prevent Overlaps */
+  .ornament.floating {
+    opacity: 0.2;
+    z-index: 0;
   }
 }
