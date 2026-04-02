@@ -671,22 +671,28 @@ footer {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 80%;
+    width: 100%; /* Match reference full-width look if needed */
     height: 100vh;
     background: rgba(40, 44, 51, 0.95);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px); /* High-end blur */
+    -webkit-backdrop-filter: blur(12px);
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 3rem;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    gap: 2.5rem;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 999;
+    transform: translateX(100%);
   }
   .navbar .nav-links.active {
-    right: 0;
+    transform: translateX(-100%); /* Slide from right */
   }
   .navbar .nav-links li {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+  .navbar .nav-links li a .slash {
+    color: var(--accent-primary);
   }
 
   /* Hero Refinement - Text-First Hierarchy */
@@ -731,24 +737,27 @@ footer {
   /* Restore Mobile Ornaments for Atmospheric Look */
   .hero-visual .ornament {
     display: block !important;
-    opacity: 0.4;
+    opacity: 0.3;
+    pointer-events: none;
   }
   .hero-visual .ornament:nth-child(1) {
-    right: -10% !important;
-    top: 0% !important;
-    width: 40% !important;
+    right: 5% !important;
+    top: 5% !important;
+    width: 45% !important;
     z-index: 0;
   }
   .hero-visual .ornament:nth-child(2) {
-    left: -15% !important;
-    top: 20% !important;
+    left: -10% !important;
+    top: 30% !important;
     width: 35% !important;
     z-index: 0;
   }
   .hero-visual .ornament-dots {
-    right: 5% !important;
-    bottom: 40% !important;
+    right: 0 !important;
+    bottom: 35% !important;
     display: block !important;
+    width: 60px !important;
+    height: 60px !important;
   }
 
   /* Grid Stacking */
