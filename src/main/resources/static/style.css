@@ -18,6 +18,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
@@ -630,30 +631,73 @@ footer {
 }
 
 /* Media Queries */
+/* Mobile Responsiveness & UI Polish */
 @media (max-width: 1024px) {
   .left-media { display: none; }
+  .container { padding: 0 1.5rem; }
 }
 
 @media (max-width: 768px) {
-  .hero, .about-content, .contact-content, .skills-content, .footer-content {
-    flex-direction: column;
+  /* Hero Refinement */
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 3rem;
   }
-  .navbar .nav-links {
-    display: none;
-  }
-  .quote-author {
-    margin-right: 0;
-    align-self: center;
-  }
-  .hero-visual {
+  .hero-content {
     align-items: center;
     width: 100%;
   }
-  .hero-image-placeholder, .hero-status {
-    transform: none;
-    margin: 1rem 0;
+  .hero-visual {
+    width: 100%;
   }
-  .contact-box-wrapper {
-    justify-content: flex-start;
+  .hero-image {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  .hero-status {
+    width: 130% !important;
+    left: 50%;
+    transform: translateX(-50%) !important;
+  }
+
+  /* Grid Stacking */
+  .skills-content, .about-content, .contact-content, .footer-content {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .skills-grid {
+    width: 100% !important;
+    flex-direction: column !important;
+  }
+  .skills-col {
+    width: 100% !important;
+  }
+  .about-visual {
+    width: 100% !important;
+  }
+
+  /* Navigation & UI Clean-up */
+  .navbar .nav-links {
+    display: none; /* Consider implementing a hamburger menu later */
+  }
+  .section-title::after {
+    width: 40% !important;
+  }
+  .quote-box {
+    font-size: 1.2rem;
+    padding: 1.5rem;
+  }
+  .quote-author {
+    align-self: center;
+    margin-top: 1rem;
+  }
+
+  /* Hide Disruptive Mobile Ornaments */
+  .ornament.floating {
+    display: none !important;
+  }
+  .hero-visual .ornament {
+    display: none !important;
   }
 }
