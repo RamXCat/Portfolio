@@ -50,6 +50,14 @@ To run this project locally, ensure you have **Java 21** and **Maven** installed
 4. **Access the site:**
    Navigate to `http://localhost:8080` in your browser.
 
+## 🌐 Deployment to Vercel (Static UI)
+
+This project is pre-configured for a **High-End Static Deployment** on [Vercel](https://vercel.com). Simply connect this repository to your Vercel Dashboard:
+
+1. **Import Project**: Select this GitHub repository.
+2. **Build Settings**: The `vercel.json` will automatically route all requests to your static visual assets.
+3. **Live!**: Your portfolio will be available at a `.vercel.app` URL with all animations and "Glassmorphism" effects fully functional.
+
 ## 📁 Project Structure
 
 - `src/main/java`: Backend controller and service logic.
