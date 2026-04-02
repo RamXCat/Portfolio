@@ -711,35 +711,66 @@ footer {
   }
   /* Hero Section Refinements */
   .hero-image {
-    max-width: 68% !important; /* Your exact dimension for tablet */
+    max-width: 68% !important;
     height: auto;
     z-index: 1;
   }
   .hero-status {
     width: fit-content !important;
     max-width: 90% !important;
-    margin: -1px auto 3rem !important; /* Your exact -1px overlap */
+    margin: -1px auto 3rem !important;
     position: relative !important;
     z-index: 5;
     background: var(--bg-color);
     padding: 0.5rem !important;
     border: 1px solid var(--text-secondary) !important;
-    font-size: 20px !important; /* Your exact font size */
+    font-size: 13px !important; /* Your updated 13px font size */
   }
 
-  /* Your exact coordinates for mobile (600px) and tablet */
+  /* Tablet/Standard Mobile Ornaments */
   .hero-visual .ornament:nth-child(1) {
-    right: 48% !important;
+    right: 30% !important;
     top: 10% !important;
     width: 50% !important;
     z-index: -1;
   }
   .hero-visual .ornament:nth-child(2) {
-    right: -24% !important;
-    top: 26% !important;
-    width: 331px !important;
-    height: 288px !important;
+    right: -29% !important;
+    top: 34% !important;
+    width: 268px !important;
+    height: 243px !important;
     z-index: 2;
+  }
+  .hero-visual .ornament:nth-child(2) img {
+    width: 60% !important;
+    height: 60% !important;
+  }
+
+  /* Specialized 414px Breakpoint for Ornaments */
+  @media (max-width: 414px) {
+    .ornament-dots:nth-of-type(1) {
+       top: 71% !important;
+       right: 14% !important;
+       height: 80px !important;
+       width: 80px !important;
+       z-index: -1;
+    }
+    .ornament-dots:nth-of-type(2) {
+       top: 7% !important;
+       right: 59% !important;
+       width: 80px !important;
+       height: 80px !important;
+    }
+  }
+
+  /* Quote Styling */
+  .quote-author {
+    border: 1px solid var(--border-color);
+    border-top: none;
+    padding: 1.3rem;
+    align-self: flex-end;
+    margin-right: 0px;
+    font-size: 1.3rem;
   }
 
   /* Vertical Stacking for All Contents */
@@ -795,6 +826,11 @@ footer {
   }
   .about-visual {
     width: 100% !important;
+  }
+  .about-image {
+    width: 49% !important; /* Your requested mobile width */
+    max-width: 350px;
+    height: auto;
   }
 
   /* Footer Recovery */
