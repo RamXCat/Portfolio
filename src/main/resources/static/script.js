@@ -37,6 +37,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
 
+        // Close mobile menu if open
+        const navLinks = document.querySelector('.nav-links');
+        const hamburger = document.getElementById('hamburger');
+        if (navLinks && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            if (hamburger) hamburger.classList.remove('active');
+        }
+
         // Smooth scroll to the target section
         const targetId = this.getAttribute('href');
         if(targetId === '#') return;
@@ -99,6 +107,24 @@ document.querySelectorAll('section, .skill-box, .about-text, .about-visual, .con
 document.querySelectorAll('.animate-on-scroll').forEach(el => {
     observer.observe(el);
 });
+
+// Mobile Menu Toggle
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        
+        // Prevent scrolling when menu is open
+        if (navLinks.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    });
+}
 
 // Load projects on DOM ready
 document.addEventListener('DOMContentLoaded', loadProjects);
