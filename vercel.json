@@ -1,8 +1,9 @@
 {
-  "public": true,
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/", "destination": "/src/main/resources/static/index.html" },
-    { "source": "/(.*)", "destination": "/src/main/resources/static/$1" }
+    {
+      "source": "/(.*)",
+      "destination": "/src/main/resources/static/$1"
+    }
   ]
 }
