@@ -709,21 +709,37 @@ footer {
     align-items: center;
     position: relative;
   }
+  /* Hero Section Refinements */
   .hero-image {
-    max-width: 85%;
+    max-width: 68% !important; /* Your exact dimension for tablet */
     height: auto;
     z-index: 1;
   }
   .hero-status {
     width: fit-content !important;
     max-width: 90% !important;
-    margin: -15px auto 3rem !important;
+    margin: -1px auto 3rem !important; /* Your exact -1px overlap */
     position: relative !important;
     z-index: 5;
     background: var(--bg-color);
-    padding: 0.5rem !important; /* Exact reference padding */
-    border: 1px solid var(--text-secondary) !important; /* Exact reference border */
-    font-size: 0.8rem;
+    padding: 0.5rem !important;
+    border: 1px solid var(--text-secondary) !important;
+    font-size: 20px !important; /* Your exact font size */
+  }
+
+  /* Your exact coordinates for mobile (600px) and tablet */
+  .hero-visual .ornament:nth-child(1) {
+    right: 48% !important;
+    top: 10% !important;
+    width: 50% !important;
+    z-index: -1;
+  }
+  .hero-visual .ornament:nth-child(2) {
+    right: -24% !important;
+    top: 26% !important;
+    width: 331px !important;
+    height: 288px !important;
+    z-index: 2;
   }
 
   /* Vertical Stacking for All Contents */
@@ -736,11 +752,11 @@ footer {
 
   /* Skills Specific Fix */
   .skills-visual {
-    display: none !important; /* Hide confusing mobile decorations */
+    display: none !important;
   }
   .skills-grid {
     width: 100% !important;
-    flex-direction: column !important; /* Force true single column */
+    flex-direction: column !important;
     align-items: center !important;
     gap: 1rem !important;
   }
