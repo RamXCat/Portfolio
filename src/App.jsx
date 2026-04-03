@@ -101,9 +101,9 @@ const Hero = () => (
         <div className="col-lg-6 text-center position-relative mt-5 mt-lg-0">
           <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.2 }} className="d-flex flex-column align-items-center">
             <div className="position-relative d-inline-block">
-              <img src="/img/logo_outline.png" alt="Ornament" className="position-absolute floating" style={{ top: '20%', left: '-19px', width: '52%', zIndex: 0 }} />
+              <img src="/img/logo_outline.png" alt="Ornament" className="position-absolute animate-show-ltr-floating" style={{ top: '20%', left: '-19px', width: '52%', zIndex: 0 }} />
               <img src="/img/Image-1.png" alt="Hero" className="img-fluid position-relative" style={{ top: '11px', maxWidth: '400px', zIndex: 1, right: '-7px' }} />
-              <img src="/img/2_logo_outline.png" alt="Dots" className="position-absolute floating" style={{ top: '53%', right: '-91px', width: '51%', zIndex: 2 }} />
+              <img src="/img/2_logo_outline.png" alt="Dots" className="position-absolute animate-show-ltr-floating" style={{ top: '53%', right: '-91px', width: '51%', zIndex: 2 }} />
             </div>
             <div className="border-terminal text-start d-flex align-items-center" style={{ marginTop: '11px', backgroundColor: 'var(--bg-primary)', zIndex: 3, width: 'auto', paddingRight: '1.3rem', paddingLeft: '0.5rem', paddingTop: '0.25rem', paddingBottom: '0.25rem', gap: '2rem' }}>
               <div style={{ width: '16px', height: '16px', backgroundColor: 'var(--accent-primary)', flexShrink: 0 }}></div>

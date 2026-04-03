@@ -99,8 +99,23 @@ section {
   50% { transform: translateY(-10px); }
 }
 
+@keyframes show-ltr {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
 .floating {
   animation: float 4s ease-in-out infinite;
+}
+
+.animate-show-ltr {
+  animation: show-ltr 0.8s ease-out forwards;
+}
+
+.animate-show-ltr-floating {
+  animation: 
+    show-ltr 0.8s ease-out forwards,
+    float 4s ease-in-out 0.8s infinite;
 }
 
 .navbar {
